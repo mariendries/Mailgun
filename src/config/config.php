@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return array(
 
@@ -33,7 +33,7 @@ return array(
 	 *
 	 */
 	'domain' => '',
-	
+
 	/**
 	 * Force the from address
 	 *
@@ -41,11 +41,25 @@ return array(
 	 * e-mail clients (Outlook) tend to display the from address incorrectly
 	 * By enabling this setting Mailgun will force the `from` address so the
 	 * from address will be displayed correctly in all e-mail clients.
-	 * 
+	 *
 	 * Warning:
 	 * This parameter is not documented in the Mailgun documentation
 	 * because if enabled, Mailgun is not able to handle soft bounces
 	 *
 	 */
 	'force_from_address' => false,
+
+
+	/**
+	 * Add email address that catches all mail traffic.
+	 * Ment for testing purposes in different environments
+	 * Leave the value empty if it is not applicable
+	 *
+	 * To catch all emails in the testing environment, copy this
+	 * config file to packages/bogardo/mailgun/environmentname/config.php
+	 * and adjust the catch_all mailaddress
+	 *
+	 *
+	 */
+	'catch_all' => '',
 );

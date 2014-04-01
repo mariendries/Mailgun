@@ -164,6 +164,12 @@ class Message
 	 */
 	public function addRecipient($type, $email, $name = false)
 	{
+		// Check if there is a catch all address for the current environment,
+		// if so, replace the original address with the testing address
+		if(!empty(Config::get('mailgun::catch_all'))){
+			$email = Config::get('mailgun::catch_all');
+		}
+
 		if ($name) {
 			$recipient = "'{$name}' <{$email}>";
 		} else {
